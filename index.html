@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-compatible" content="ie-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculator</title>
+        <style>
+            *{
+                box-sizing: border-box;
+                background-color: rgb(235, 240, 243);
+            }
+            .container {
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .calc {
+                padding: 15px;
+                border-radius: 14px;
+                box-shadow: inset 5px 5px 12px rgb(251, 255, 251), 5px 5px 12px black;
+                display: grid;
+                grid-template-columns: repeat(4,60px);
+
+            }
+            input{
+                grid-column: span 4;
+                height: 70px;
+                background-color: rgb(206, 205, 204);
+                box-shadow: inset -5px -5px 12px #cecbcbed, inset 5px 5px 12px #000000ed;
+                border:   none;
+                color: rgb(14, 13, 13);
+                font-size: 50px;
+                text-align: end;
+                margin: 15px 4px;
+                border-radius: 14px;
+                padding: 20px;
+            }
+            button{
+                height: 53px;
+                width: 53px;
+                background-color: #fffcfce0;
+                box-shadow: -5px -5px 12px white, 5px 5px 12px #6b66668f;
+                border-radius: 16px;
+                border: none;
+                font-size: 24px;
+                font-family: emoji;
+                margin: 4px;
+            }
+            button:hover{
+                background-color: rgb(163, 165, 164);
+                font-weight: 100;
+            }
+            button.eq_bt{
+                color: rgb(239 239 239);
+                font-size: 27px;
+                font-weight: 33px;
+                background-color: #0000ffad;
+                border-radius: 40px;
+            }
+            button.eq_bt:hover{
+                background-color: rgb(16, 16, 161);
+                font-weight: 200;
+            }
+        </style>
+    </head>
+   
+<body>
+    <div class="container">
+        <div class="calc">
+            <input type=" text" id="result">
+            <button onclick="allclear()">AC</button>
+            <button onclick="del()">del</button>
+            <button onclick="sign('+/-')">+/-</button>
+            <button onclick="display('/')">/</button>
+            <button onclick="display('9')">9</button>
+            <button onclick="display('8')">8</button>
+            <button onclick="display('7')">7</button>
+            <button onclick="display('*')">*</button>
+            <button onclick="display('6')">6</button>
+            <button onclick="display('5')">5</button>
+            <button onclick="display('4')">4</button>
+            <button onclick="display('-')">-</button>
+            <button onclick="display('3')">3</button>
+            <button onclick="display('2')">2</button>
+            <button onclick="display('1')">1</button>
+            <button onclick="display('+')">+</button>
+            <button onclick="display('00')">00</button>
+            <button onclick="display('0')">0</button>
+            <button onclick="display('.')">.</button>
+            <button onclick="output()" class="eq_bt">=</button>
+        </div>
+    </div>
+    <script>
+        var o = document.getElementById('result');
+        function allclear(){
+            o.value = " ";
+        }
+        function del(){
+            o.value = o.value.slice(0,-1);
+        }
+        function display(n){
+            o.value += n;
+        }
+        function sign(){
+            o.value = (-(o.value));
+        }
+        function output(){
+            try{
+            o.value = eval(o.value);
+            }
+            catch(err){
+                alert("You have entered a wrong input.");
+            }
+        }
+        /*function percentage(){
+            return o.value = (n/n)*100;
+        }
+        */
+        
+
+    </script>
+</body>
+</html>
