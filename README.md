@@ -1,7 +1,10 @@
 # basicCalculator
-A very basic calculator based on simple mathematics problems. I did this project in my first year of college.
+A very basic calculator based on simple mathematics problems.
+<br>
+Technologies Used : HTML, CSS, JS. <br>
+Platform : Visual Studio Code
 
-
+<hr>
 
 
 
